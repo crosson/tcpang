@@ -1,9 +1,9 @@
 # tcpang
-Why? Because icmp isn't always appropriate.
-Because other tcp ping applications try to do too much.
-Because often times TCP flows are what we are troubleshooting in the datacenter. 
-
-self created tcping. Lazy naming because tcping already exists. Proper option parser to come.
+Why? Because icmp isn't always appropriate.  
+Because other tcp ping applications try to do too much.  
+Because often times TCP flows are what we are troubleshooting in the datacenter.  
+  
+self created tcping. Lazy naming because tcping already exists. Proper option parser to come.  
 
 	./tcpang.rb www.google.com
 	3-way OK from www.google.com count=0 time=0.031423
@@ -29,6 +29,6 @@ self created tcping. Lazy naming because tcping already exists. Proper option pa
 	Request timeout for host www.google.com count 3
 
 
-todo: move time to msec values
-todo: add proper option parser
-todo: figure out why Timeout::timeouterror doesn't raise properly.
+* todo: move time to msec values
+* todo: add proper option parser
+* todo: figure out why Timeout::timeouterror doesn't raise properly.
