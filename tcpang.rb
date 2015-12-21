@@ -2,7 +2,6 @@
 require 'rubygems'
 require 'socket'
 require 'timeout'
-require 'ipaddress'
 require 'optparse'
 
 abort('tcpang.rb 192.168.1.1') unless ARGV[0]
