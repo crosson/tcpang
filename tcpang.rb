@@ -34,7 +34,7 @@ def ping(host, port, timeout = 1)
   end
   e_time = Time.now
   elapsed_time = e_time - b_time
-  return {return: return_type, time: elapsed_time}
+  return {return: return_type, time: elapsed_time * 1000}
 end
 
 count = 0
@@ -43,7 +43,7 @@ number_of.times do
   if response[:return] == "Timeout::TimeoutError"
     puts "Request timeout for host %s count=%d" % [destination_host, count]
   else
-    puts "%s from %s count=%d time=%f" % [response[:return], destination_host, count, response[:time]]
+    puts "%s from %s count=%d time=%0.3f ms" % [response[:return], destination_host, count, response[:time]]
   end
   count += 1
   sleep delay
