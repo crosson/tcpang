@@ -28,7 +28,5 @@ self created tcping. Lazy naming because tcping already exists. Proper option pa
 	Request timeout for host www.google.com count 2
 	Request timeout for host www.google.com count 3
 
-
-* todo: move time to msec values
 * todo: add proper option parser
 * todo: figure out why Timeout::timeouterror doesn't raise properly.
