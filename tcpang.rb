@@ -41,7 +41,7 @@ count = 0
 number_of.times do
   response = ping(destination_host, destination_port)
   if response[:return] == "Timeout::TimeoutError"
-    puts "Request timeout for host %s count %d" % [destination_host, count]
+    puts "Request timeout for host %s count=%d" % [destination_host, count]
   else
     puts "%s from %s count=%d time=%f" % [response[:return], destination_host, count, response[:time]]
   end
