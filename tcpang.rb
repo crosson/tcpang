@@ -1,11 +1,11 @@
-#!/Users/cliffordrosson/.rvm/rubies/ruby-1.9.2-p180/bin/ruby
+#!/usr/bin/ruby
 require 'rubygems'
 require 'socket'
 require 'timeout'
 require 'ipaddress'
 require 'optparse'
 
-abort('tcpaing.rb 192.168.1.1') unless ARGV[0]
+abort('tcpang.rb 192.168.1.1') unless ARGV[0]
 
 destination_host = ARGV[0]
 destination_port = ARGV[1].nil? ? 80 : ARGV[1]
