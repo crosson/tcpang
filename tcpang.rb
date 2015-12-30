@@ -5,11 +5,22 @@ require 'timeout'
 require 'optparse'
 
 abort('tcpang.rb 192.168.1.1') unless ARGV[0]
-
 destination_host = ARGV[0]
-destination_port = ARGV[1].nil? ? 80 : ARGV[1]
-number_of =  ARGV[2].nil? ? 4 : ARGV[2].to_i
+options = {}
+options[:port] = 80
+number_of = 4
 delay = 1
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: tcpang.rb 192.168.1.1 [options]"
+  opts.on("-r", "--repeat=val", "delay between pangs", Integer ) { |val| options[:repeat] = val.to_i }
+  opts.on("-p", "--port=val", "port. Default is 80", Integer ) { |val| options[:port] = val.to_i }
+  opts.on("-d", "--delay=val", "Delay. Default is 1", Integer ) { |val| options[:delay] = val.to_i }
+end.parse!
+
+destination_port = options[:port] unless options[:port].nil?
+number_of         = options[:repeat] unless options[:repeat].nil?
+delay             = options[:delay] unless options[:delay].nil?
 
 def ping(host, port, timeout = 1)
   b_time = Time.now
